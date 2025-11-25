@@ -1,0 +1,60 @@
+digraph g {
+// id = 0, graphName = ch3oo
+"0-0" [ shape=ellipse label="ch3oo" image="out/037_g_0_11311100.svg" ];
+// id = 1, graphName = vitc
+"1-0" [ shape=ellipse label="vitc" image="out/039_g_1_11311100.svg" ];
+// id = 2, graphName = mol_2
+"2-0" [ shape=ellipse label="mol_2" image="out/041_g_2_11311100.svg" ];
+// id = 4, graphName = mol_3
+"4-0" [ shape=ellipse label="mol_3" image="out/043_g_3_11311100.svg" ];
+// id = 6, graphName = mol_4
+"6-0" [ shape=ellipse label="mol_4" image="out/045_g_4_11311100.svg" ];
+// id = 7, graphName = mol_5
+"7-0" [ shape=ellipse label="mol_5" image="out/047_g_5_11311100.svg" ];
+// id = 9, graphName = mol_6
+"9-0" [ shape=ellipse label="mol_6" image="out/049_g_6_11311100.svg" ];
+// id = 11, graphName = mol_7
+"11-0" [ shape=ellipse label="mol_7" image="out/051_g_7_11311100.svg" ];
+// id = 13, graphName = mol_8
+"13-0" [ shape=ellipse label="mol_8" image="out/053_g_8_11311100.svg" ];
+// id = 3{ 'ch3oo' 'vitc' }, 'PATH-2-3, E_A: 101.87, E_R: 51.42', { 'mol_2' }
+"3-0" [ shape=box label="r_{0}, PATH-2-3, E_A: 101.87, E_R: 51.42" ];
+// id = 5{ 'ch3oo' 'vitc' }, 'PATH-3-5, E_A: 81.43, E_R: 3.81', { 'mol_3' }
+"5-0" [ shape=box label="r_{1}, PATH-3-5, E_A: 81.43, E_R: 3.81" ];
+// id = 8{ 'ch3oo' 'vitc' }, 'PATH-4-7, E_A: 71.5, E_R: -21.54', { 'mol_4' 'mol_5' }
+"8-0" [ shape=box label="r_{2}, PATH-4-7, E_A: 71.5, E_R: -21.54" ];
+// id = 10{ 'ch3oo' 'vitc' }, 'PATH-5-8, E_A: 102.59, E_R: -37.85', { 'mol_4' 'mol_6' }
+"10-0" [ shape=box label="r_{3}, PATH-5-8, E_A: 102.59, E_R: -37.85" ];
+// id = 12{ 'ch3oo' 'vitc' }, 'PATH-8-11, E_A: 91.68, E_R: -25.53', { 'mol_4' 'mol_7' }
+"12-0" [ shape=box label="r_{4}, PATH-8-11, E_A: 91.68, E_R: -25.53" ];
+// id = 14{ 'ch3oo' 'vitc' }, 'PATH-10-13, E_A: 99.85, E_R: 23.53', { 'mol_4' 'mol_8' }
+"14-0" [ shape=box label="r_{5}, r_{6}, PATH-10-13, E_A: 99.85, E_R: 23.53, PATH-11-14, E_A: 91.18, E_R: 23.53" ];
+// id = 3{ 'ch3oo' 'vitc' }, 'PATH-2-3, E_A: 101.87, E_R: 51.42', { 'mol_2' }
+"0-0" -> "3-0" [ ];
+"1-0" -> "3-0" [ ];
+"3-0" -> "2-0" [ ];
+// id = 5{ 'ch3oo' 'vitc' }, 'PATH-3-5, E_A: 81.43, E_R: 3.81', { 'mol_3' }
+"0-0" -> "5-0" [ ];
+"1-0" -> "5-0" [ ];
+"5-0" -> "4-0" [ ];
+// id = 8{ 'ch3oo' 'vitc' }, 'PATH-4-7, E_A: 71.5, E_R: -21.54', { 'mol_4' 'mol_5' }
+"0-0" -> "8-0" [ ];
+"1-0" -> "8-0" [ ];
+"8-0" -> "6-0" [ ];
+"8-0" -> "7-0" [ ];
+// id = 10{ 'ch3oo' 'vitc' }, 'PATH-5-8, E_A: 102.59, E_R: -37.85', { 'mol_4' 'mol_6' }
+"0-0" -> "10-0" [ ];
+"1-0" -> "10-0" [ ];
+"10-0" -> "6-0" [ ];
+"10-0" -> "9-0" [ ];
+// id = 12{ 'ch3oo' 'vitc' }, 'PATH-8-11, E_A: 91.68, E_R: -25.53', { 'mol_4' 'mol_7' }
+"0-0" -> "12-0" [ ];
+"1-0" -> "12-0" [ ];
+"12-0" -> "6-0" [ ];
+"12-0" -> "11-0" [ ];
+// id = 14{ 'ch3oo' 'vitc' }, 'PATH-10-13, E_A: 99.85, E_R: 23.53', { 'mol_4' 'mol_8' }
+"0-0" -> "14-0" [ ];
+"1-0" -> "14-0" [ ];
+"14-0" -> "6-0" [ ];
+"14-0" -> "13-0" [ ];
+}

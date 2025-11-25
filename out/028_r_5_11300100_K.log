@@ -1,0 +1,150 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=commonPreamble 2025.5.13)  25 NOV 2025 15:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\newcommand{\modPrefix}{/usr/local/bin/..}\newcommand{\modFigureInput}{out/02
+8_r_5_11300100_K.tex}\input{\modPrefix/share/mod/figureTemplate.tex}
+
+(/usr/local/bin/../share/mod/figureTemplate.tex
+(/usr/share/texmf/tex/latex/preview/preview.sty
+Package: preview 2017/04/24 12.2 (AUCTeX/preview-latex)
+
+(/usr/share/texmf/tex/latex/preview/prtightpage.def
+\PreviewBorder=\dimen303
+)
+\pr@snippet=\count344
+\pr@box=\box94
+\pr@output=\toks43
+)
+No file out/028_r_5_11300100_K.aux.
+\openout1 = `out/028_r_5_11300100_K.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count345
+\scratchdimen=\dimen304
+\scratchbox=\box95
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen305
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks45
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring OFF on input line 13.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count351
+)
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
+\@outlinefile=\write5
+\openout5 = `out/028_r_5_11300100_K.out'.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
+nary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 13.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 13.
+
+Preview: Fontsize 12pt
+Preview: PDFoutput 1
+(./out/028_r_5_11300100_K.tex (./out/027_r_5_mol_coord.tex)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+Preview: Tightpage -32891 -32891 32891 32891
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./out/028_r_5_11300100_K.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `out/028_r_5_11300100_K.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `out/028_r_5_11300100_K.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
+Here is how much of TeX's memory you used:
+ 1805 strings out of 442230
+ 40301 string characters out of 4971417
+ 1317122 words of memory out of 5000000
+ 57076 multiletter control sequences out of 15000+600000
+ 473904 words of font info for 46 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 55i,7n,58p,358b,755s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on out/028_r_5_11300100_K.pdf (1 page, 19039 bytes).
+PDF statistics:
+ 50 PDF objects out of 1000 (max. 8388607)
+ 17 compressed objects within 1 object stream
+ 1 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+

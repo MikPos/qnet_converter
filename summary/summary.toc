@@ -1,0 +1,9 @@
+\babel@toc {english}{}\relax 
+\contentsline {subsection}{\numberline {0.0.1}PATH-2-3, E\_A: 101.87, E\_R: 51.42}{2}{subsection.0.0.1}%
+\contentsline {subsection}{\numberline {0.0.2}PATH-3-5, E\_A: 81.43, E\_R: 3.81}{2}{subsection.0.0.2}%
+\contentsline {subsection}{\numberline {0.0.3}PATH-4-7, E\_A: 71.5, E\_R: -21.54}{3}{subsection.0.0.3}%
+\contentsline {subsection}{\numberline {0.0.4}PATH-5-8, E\_A: 102.59, E\_R: -37.85}{4}{subsection.0.0.4}%
+\contentsline {subsection}{\numberline {0.0.5}PATH-8-11, E\_A: 91.68, E\_R: -25.53}{4}{subsection.0.0.5}%
+\contentsline {subsection}{\numberline {0.0.6}PATH-10-13, E\_A: 99.85, E\_R: 23.53}{5}{subsection.0.0.6}%
+\contentsline {subsection}{\numberline {0.0.7}PATH-11-14, E\_A: 91.18, E\_R: 23.53}{5}{subsection.0.0.7}%
+\contentsline {subsection}{\numberline {0.0.8}DG Hyper, \texttt {dg\_0}}{6}{subsection.0.0.8}%

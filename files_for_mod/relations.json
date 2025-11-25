@@ -1,0 +1,645 @@
+{
+    "ch3oo_vitc/PATH_2_3": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_2"
+        ],
+        "E_a": 85.1444,
+        "E_r": 22.551759999999998,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_2_3/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_2_3/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "6+9"
+        ],
+        "final_rule": [
+            "6+9"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -875.0976914066,
+                            -875.0773415425
+                        ],
+                        "G_R_gas": 48.31901683844626,
+                        "G_R_solv": 51.421205987688154,
+                        "G_A_gas": 98.57758503314108,
+                        "G_A_solv": 101.86694093002006,
+                        "H_R_gas": -2.5409831618890166,
+                        "H_R_solv": 24.086211720947176,
+                        "H_A_gas": 46.28758503263816,
+                        "H_A_solv": 75.2258965363726,
+                        "S_R_gas": -170.59000000000003,
+                        "S_R_solv": -91.68674414272232,
+                        "S_A_gas": -175.35,
+                        "S_A_solv": -89.32298136157108,
+                        "k": 1.2027423857379398e-05,
+                        "k_r": 12266.606347297924,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "s^(-1)",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i541.29",
+                        "tunnel_corr": 1.358689,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_3_5": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_3"
+        ],
+        "E_a": 50.208,
+        "E_r": -29.4972,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_3_5/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_3_5/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "6+10"
+        ],
+        "final_rule": [
+            "6+10"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -875.1113218922001,
+                            -875.0810516733
+                        ],
+                        "G_R_gas": 15.282176895532757,
+                        "G_R_solv": 3.8067078054882586,
+                        "G_A_gas": 89.8666366180405,
+                        "G_A_solv": 81.43201356381178,
+                        "H_R_gas": -36.41782310465351,
+                        "H_R_solv": -29.130487780086696,
+                        "H_A_gas": 36.96663661766797,
+                        "H_A_solv": 41.641627308446914,
+                        "S_R_gas": -173.37000000000003,
+                        "S_R_solv": -110.43924563230861,
+                        "S_A_gas": -177.44000000000005,
+                        "S_A_solv": -133.4701400473108,
+                        "k": 0.05187616258966947,
+                        "k_r": 0.24091853838515348,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "s^(-1)",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i638.41",
+                        "tunnel_corr": 1.541318,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_4_7": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_4",
+            "mol_5"
+        ],
+        "E_a": 110.33208,
+        "E_r": -14.93688,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_4_7/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_4_7/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "15-18",
+            "6+18"
+        ],
+        "final_rule": [
+            "15-18",
+            "6+18"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -190.8683523776,
+                            -684.2272897448,
+                            -875.0796931617
+                        ],
+                        "G_R_gas": -4.320587494410574,
+                        "G_R_solv": -21.53793046902865,
+                        "G_A_gas": 79.06340882368386,
+                        "G_A_solv": 71.50063233962283,
+                        "H_R_gas": -3.3005874948576093,
+                        "H_R_solv": -27.432865612674505,
+                        "H_A_gas": 29.193408823106438,
+                        "H_A_solv": 48.11631435202435,
+                        "S_R_gas": 3.4199999999999786,
+                        "S_R_solv": -19.772806116001572,
+                        "S_A_gas": -167.25999999999996,
+                        "S_A_solv": -78.4265872458812,
+                        "k": 690.7443942913342,
+                        "k_r": 0.11642807113811936,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i2129.84",
+                        "tunnel_corr": 373.5506,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_5_8": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_4",
+            "mol_6"
+        ],
+        "E_a": 58.3668,
+        "E_r": -29.62272,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_5_8/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_5_8/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "19-20",
+            "6+20"
+        ],
+        "final_rule": [
+            "19-20",
+            "6+20"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -190.8683523776,
+                            -684.2302829737,
+                            -875.0659426129998
+                        ],
+                        "G_R_gas": -14.529309971258044,
+                        "G_R_solv": -37.850549306720495,
+                        "G_A_gas": 116.04547443566844,
+                        "G_A_solv": 102.58920007571578,
+                        "H_R_gas": -11.739309971686453,
+                        "H_R_solv": -47.91049749823287,
+                        "H_A_gas": 65.30547443544492,
+                        "H_A_solv": 69.41374801658094,
+                        "S_R_gas": 9.34999999999997,
+                        "S_R_solv": -33.7489374169892,
+                        "S_A_gas": -170.19000000000005,
+                        "S_A_solv": -111.27821753894135,
+                        "k": 7.754008236375999,
+                        "k_r": 1.813161369464282e-06,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i3349.96",
+                        "tunnel_corr": 1172215.0,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_8_11": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_4",
+            "mol_7"
+        ],
+        "E_a": 97.82192,
+        "E_r": 21.67312,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_8_11/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_8_11/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "11-23",
+            "6+23"
+        ],
+        "final_rule": [
+            "11-23",
+            "6+23"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -190.8683523776,
+                            -684.229138278,
+                            -875.0643846936
+                        ],
+                        "G_R_gas": -12.763911411166191,
+                        "G_R_solv": -25.52578391879797,
+                        "G_A_gas": 113.83579182019457,
+                        "G_A_solv": 91.68234275793657,
+                        "H_R_gas": -9.593911411706358,
+                        "H_R_solv": -31.53760633757338,
+                        "H_A_gas": 67.52579181967303,
+                        "H_A_solv": 52.95622673025355,
+                        "S_R_gas": 10.609999999999896,
+                        "S_R_solv": -20.18598329102794,
+                        "S_A_gas": -155.32999999999996,
+                        "S_A_solv": -129.89352851672237,
+                        "k": 0.16536848946368082,
+                        "k_r": 5.578989721798094e-06,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i2045.21",
+                        "tunnel_corr": 307.0057,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_10_13": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_4",
+            "mol_8"
+        ],
+        "E_a": 83.42896,
+        "E_r": 33.38832,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_10_13/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_10_13/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "13-25",
+            "6+25"
+        ],
+        "final_rule": [
+            "13-25",
+            "6+25"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -190.8683523776,
+                            -684.2053352929,
+                            -875.0661538057999
+                        ],
+                        "G_R_gas": 49.900825968943536,
+                        "G_R_solv": 23.53183386521414,
+                        "G_A_gas": 109.15098773920909,
+                        "G_A_solv": 99.84817126207054,
+                        "H_R_gas": 51.85082596866414,
+                        "H_R_solv": 8.72076078178361,
+                        "H_A_gas": 63.05098773865029,
+                        "H_A_solv": 66.7542202626355,
+                        "S_R_gas": 6.51999999999997,
+                        "S_R_solv": -49.696914583059915,
+                        "S_A_gas": -154.59999999999997,
+                        "S_A_solv": -110.97749790140182,
+                        "k": 0.003555852387841649,
+                        "k_r": 47.15394899296431,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i1910.69",
+                        "tunnel_corr": 177.9181,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_vitc/PATH_11_14": {
+        "educts": [
+            "ch3oo",
+            "vitc"
+        ],
+        "products": [
+            "mol_4",
+            "mol_8"
+        ],
+        "E_a": 99.49552000000001,
+        "E_r": 40.1664,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_11_14/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_vitc/PATH_11_14/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "13-26",
+            "6+26"
+        ],
+        "final_rule": [
+            "13-26",
+            "6+26"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.8690615939,
+                            -190.8683523776,
+                            -684.2053352929,
+                            -875.0649052176001
+                        ],
+                        "G_R_gas": 49.900825968943536,
+                        "G_R_solv": 23.53183386521414,
+                        "G_A_gas": 111.479156057816,
+                        "G_A_solv": 91.18093530740589,
+                        "H_R_gas": 51.85082596866414,
+                        "H_R_solv": 8.72076078178361,
+                        "H_A_gas": 66.1491560577415,
+                        "H_A_solv": 51.60171505948529,
+                        "S_R_gas": 6.51999999999997,
+                        "S_R_solv": -49.696914583059915,
+                        "S_A_gas": -152.05,
+                        "S_A_solv": -132.76179019847427,
+                        "k": 0.04335765039099627,
+                        "k_r": 574.9632470634668,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i1857.28",
+                        "tunnel_corr": 65.75324,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_mol_5/PATH_0_0": {
+        "educts": [
+            "ch3oo",
+            "mol_5"
+        ],
+        "products": [
+            "mol_9"
+        ],
+        "E_a": null,
+        "E_r": -186.77376,
+        "ts": null,
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": null,
+        "initial_rule": [
+            "6+11"
+        ],
+        "final_rule": [
+            "6+11"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.2272897448,
+                            -874.5358016496
+                        ],
+                        "G_R_gas": -150.4514159699902,
+                        "G_R_solv": -130.56324069667608,
+                        "G_A_gas": null,
+                        "G_A_solv": null,
+                        "H_R_gas": -206.60141597036272,
+                        "H_R_solv": -153.69080054713413,
+                        "H_A_gas": null,
+                        "H_A_solv": null,
+                        "S_R_gas": -188.34000000000006,
+                        "S_R_solv": -77.58219302507891,
+                        "S_A_gas": null,
+                        "S_A_solv": null,
+                        "k": null,
+                        "k_r": null,
+                        "k_unit": "None",
+                        "k_r_unit": "None",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "iNone",
+                        "tunnel_corr": null,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_mol_5/PATH_1_2": {
+        "educts": [
+            "ch3oo",
+            "mol_5"
+        ],
+        "products": [
+            "mol_4",
+            "mol_10"
+        ],
+        "E_a": 73.80576,
+        "E_r": -121.7544,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_5/PATH_1_2/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_5/PATH_1_2/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "13-16",
+            "6+16"
+        ],
+        "final_rule": [
+            "13-16",
+            "6+16"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.2272897448,
+                            -190.8683523776,
+                            -683.6316241315,
+                            -874.4343843684
+                        ],
+                        "G_R_gas": -124.95250958716497,
+                        "G_R_solv": -126.04628489073366,
+                        "G_A_gas": 105.20965582085773,
+                        "G_A_solv": 89.74449261697009,
+                        "H_R_gas": -121.21250958740711,
+                        "H_R_solv": -126.17341161193326,
+                        "H_A_gas": 46.399655820801854,
+                        "H_A_solv": 51.74687851825729,
+                        "S_R_gas": 12.52999999999993,
+                        "S_R_solv": -0.44040657938759775,
+                        "S_A_gas": -197.25000000000003,
+                        "S_A_solv": -127.44491564299103,
+                        "k": 0.0013342541697480865,
+                        "k_r": 1.104120641120496e-25,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i352.89",
+                        "tunnel_corr": 1.133542,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_mol_6/PATH_0_0": {
+        "educts": [
+            "ch3oo",
+            "mol_6"
+        ],
+        "products": [
+            "mol_11"
+        ],
+        "E_a": 8.5772,
+        "E_r": -163.30152,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_6/PATH_0_0/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_6/PATH_0_0/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "6+9"
+        ],
+        "final_rule": [
+            "6+9"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.2302829737,
+                            -874.5307770582,
+                            -874.4555585177001
+                        ],
+                        "G_R_gas": -134.36062877252698,
+                        "G_R_solv": -124.10603274498135,
+                        "G_A_gas": 59.97564931027591,
+                        "G_A_solv": 70.38767317868769,
+                        "H_R_gas": -186.51062877243385,
+                        "H_R_solv": -146.41326595516875,
+                        "H_A_gas": 1.1356493099592626,
+                        "H_A_solv": 37.34768131328747,
+                        "S_R_gas": -174.93000000000004,
+                        "S_R_solv": -74.83686973315851,
+                        "S_A_gas": -197.32000000000005,
+                        "S_A_solv": -110.78634870338783,
+                        "k": 3.651187071667845,
+                        "k_r": 6.608874237501362e-22,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "s^(-1)",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i476.91",
+                        "tunnel_corr": 1.260333,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    },
+    "ch3oo_mol_6/PATH_1_2": {
+        "educts": [
+            "ch3oo",
+            "mol_6"
+        ],
+        "products": [
+            "mol_4",
+            "mol_12"
+        ],
+        "E_a": 60.41696,
+        "E_r": -86.19040000000001,
+        "ts": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_6/PATH_1_2/ts/ts.xyz",
+        "charge": 0,
+        "unpaired": "0",
+        "frozen": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/ch3oo_mol_6/PATH_1_2/ts/frozen_atoms.txt",
+        "initial_rule": [
+            "12-23",
+            "6+23"
+        ],
+        "final_rule": [
+            "12-23",
+            "6+23"
+        ],
+        "G": {
+            "25": {
+                "h2o": {
+                    "sp_m06-2x_qz": {
+                        "sp_energies": [
+                            -190.2259785146,
+                            -684.2302829737,
+                            -190.8683523776,
+                            -683.6253051895,
+                            -874.4611492015
+                        ],
+                        "G_R_gas": -99.75340488925576,
+                        "G_R_solv": -94.10912019433454,
+                        "G_A_gas": 47.99730899371207,
+                        "G_A_solv": 43.48336980631575,
+                        "H_R_gas": -97.46340488968417,
+                        "H_R_solv": -82.98233616538346,
+                        "H_A_gas": -11.43269100645557,
+                        "H_A_solv": 17.126107237767428,
+                        "S_R_gas": 7.679999999999909,
+                        "S_R_solv": 37.31871886382615,
+                        "S_A_gas": -199.31000000000003,
+                        "S_A_solv": -88.38349511506466,
+                        "k": 151573.71410769166,
+                        "k_r": 4.937620060197448e-12,
+                        "k_unit": "l/mol/s",
+                        "k_r_unit": "l/mol/s",
+                        "molar": true,
+                        "solvent": "/gpfs/projects/qm_organics/posselt/vitc_prop_func/molecules/h2o/confsub/opt",
+                        "imag": "i113.11",
+                        "tunnel_corr": 1.012216,
+                        "ts_unsuccessful": false
+                    }
+                }
+            }
+        }
+    }
+}
