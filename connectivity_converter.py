@@ -131,12 +131,12 @@ def create_nodes_and_edges(graph_string):
         if line:
             line_parts = line.split(":")
             node_id, node_label = split_atom_label(line_parts[0])
-            graph_gml += f"""node [ id {node_id} label "{node_label}" ]\n"""
+            graph_gml += f"""\t\tnode [ id {node_id} label "{node_label}" ]\n"""
             for edge in line_parts[1].split(" "):
                 if edge:
                     edge_label, target_id = find_edge_target_and_label(edge)
                     if node_id > target_id:
-                        graph_gml += f"""edge [ source {node_id} target {target_id} label "{edge_label}" ]\n"""
+                        graph_gml += f"""\t\tedge [ source {node_id} target {target_id} label "{edge_label}" ]\n"""
     return graph_gml
 
 
@@ -151,24 +151,24 @@ def generate_graph_gml(graph_string):
     return gml
 
 def generate_rule_left_gml(graph_strings):
-    gml = """left [\n"""
+    gml = """\tleft [\n"""
     for g_string in graph_strings:
         gml += g_string
-    gml += """]"""
+    gml += """\t]\n"""
     return gml
 
 def generate_rule_right_gml(graph_strings):
-    gml = """right [\n"""
+    gml = """\tright [\n"""
     for g_string in graph_strings:
         gml += g_string
-    gml += """]"""
+    gml += """\t]"""
     return gml
 
 def generate_rule_gml(list_of_left_graph_string, list_of_right_graph_string):
     rule_gml = """rule [\n"""
     rule_gml += generate_rule_left_gml(list_of_left_graph_string)
     rule_gml += generate_rule_right_gml(list_of_right_graph_string)
-    rule_gml += """]"""
+    rule_gml += """\n]"""
     # print(rule_gml)
     return rule_gml
 
@@ -294,8 +294,9 @@ def build_mod_dg(reaction_dict, connectivity_dict, connectivity_rule_dict):
         new_rule_name = f"{products.replace('_', '-')}, E_A: {round(e_a, 2)}, E_R: {round(e_r,2)}"
         new_rule = mod.ruleGMLString(new_rule_string, name=new_rule_name)
 
-        with open(f"{new_rule_name}.txt", "w") as f:
-            f.writelines(new_rule_string.split("\n"))
+        with open(f"rules/{new_rule_name}.gml", "w") as f:
+            for line in new_rule_string.split("\n"):
+                    f.write(line + "\n")
 
         print(f"Generated Rule for: {key}")
 
@@ -329,8 +330,9 @@ def collect_graphs(connectivity_dict, graph_db, gml_db, molecules, molecule_name
             graph_db[mol_name] = mod_graph
             gml_db[mol_name] = graph_string
             # Create graphs
-            with open(f"{mol_name}.txt", "w") as f:
-                f.writelines(gml_string.split("\n"))
+            with open(f"graphs/{mol_name}.gml", "w") as f:
+                for line in gml_string.split("\n"):
+                    f.write(line + "\n")
         else:
             result.append(graph_db[mol_name])
             gmls.append(gml_db[mol_name])
