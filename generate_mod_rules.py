@@ -47,7 +47,7 @@ def convert_xyz(xyz_file, charge=0, unpaired=0):
     return smi
 
 
-def read_SDF_withBO(file):
+def read_SDF_with_bond_order(file):
 
     """ Read in the connectivity from an SDF file and return the connectivity as a list """
 
@@ -84,7 +84,7 @@ def read_SDF_withBO(file):
 
     return conn, radicals, charges
 
-def read_SDF_woBO(file):
+def read_SDF_without_bond_order(file):
 
     """ Read in the connectivity from an SDF file and return the connectivity as a list """
 
@@ -136,7 +136,7 @@ def compare_connectivity(bondlist1, bondlist2):
 
     return sorted(diff)
 
-def convert_bo(number):
+def convert_bond_order(number):
 
     if int(number) == 1:
         return "-"
@@ -212,11 +212,11 @@ if  __name__=="__main__":
         convert_xyz(educt_xyz, charge=tot_charge, unpaired=tot_unpaired)
         convert_xyz(product_xyz, charge=tot_charge, unpaired=tot_unpaired)
 
-        ed_conn = read_SDF_woBO(key+"/educt_new.sdf")
-        prod_conn = read_SDF_woBO(key+"/product_new.sdf")
+        ed_conn = read_SDF_without_bond_order(key+"/educt_new.sdf")
+        prod_conn = read_SDF_without_bond_order(key+"/product_new.sdf")
 
-        ed_conn_BO, ed_radicals, ed_charge = read_SDF_withBO(key+"/educt_new.sdf") 
-        prod_conn_BO, prod_radicals, prod_charge = read_SDF_withBO(key+"/product_new.sdf")
+        ed_conn_BO, ed_radicals, ed_charge = read_SDF_with_bond_order(key+"/educt_new.sdf") 
+        prod_conn_BO, prod_radicals, prod_charge = read_SDF_with_bond_order(key+"/product_new.sdf")
 
         print("ed_radicals, prod_radicals:", ed_radicals, prod_radicals)
         #breaks = compare_connectivity(prod_conn, ed_conn)
@@ -268,7 +268,7 @@ if  __name__=="__main__":
         left_string = ""
         for_right_string = ""
         for item in educt_bonds:
-            left_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bo(item.split(".")[2]))+"\" ]\n"
+            left_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
         if ed_radicals != []:
             for_right_string =""
             for it in ed_radicals:
@@ -280,7 +280,7 @@ if  __name__=="__main__":
         right_string = ""
         for_left_string = ""
         for item in product_bonds:
-            right_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bo(item.split(".")[2]))+"\" ]\n"
+            right_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
         if prod_radicals != []:
             for it in prod_radicals:
                 if ed_radicals == [] or it not in ed_radicals:
@@ -299,7 +299,7 @@ if  __name__=="__main__":
                 else:
                     context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n"
             for item in ed_conn_final:
-                context_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bo(item.split(".")[2]))+"\" ]\n"
+                context_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
 
         else:
             for node in nodes:
