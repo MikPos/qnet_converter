@@ -151,11 +151,14 @@ if  __name__=="__main__":
 
     if sys.argv[-1] == "full":
         full_context = True
+        for file in glob.glob("full_context_rules/qnet_rule*.gml"):
+            os.remove(file)
     else:
         full_context = False
+        for file in glob.glob("no_context_rules/qnet_rule*.gml"):
+            os.remove(file)
 
-    for file in glob.glob("mod_rules*.py"):
-        os.remove(file)
+    
 
     with open("relations.json", "r") as json_file:
         relations = json.load(json_file)
@@ -307,9 +310,12 @@ if  __name__=="__main__":
 
         rule_name = key.replace("/PATH","_PATH").replace("-", "_")
 
-        mod_rules_file = "mod_rules.py"
+        if full_context:
+            mod_rule_file = f"full_context_rules/qnet_rule_{rule_name}.gml"
+        else:
+            mod_rule_file = f"no_context_rules/qnet_rule_{rule_name}.gml"
 
-        with open(mod_rules_file, "a") as out:
+        with open(mod_rule_file, "a") as out:
             out.write(str(rule_name)+""" = \"\"\"rule [
 \truleID \" """+str(rule_name)+"""\"
 \tleft [\n"""
@@ -322,7 +328,7 @@ if  __name__=="__main__":
 +right_string+"""
 \t]
 ]\"\"\"
-rule1_F = Rule.fromGMLString("""+str(rule_name)+""")
+rule_"""+str(rule_name)+"""_F = mod.Rule.fromGMLString("""+str(rule_name)+""")
 """)
 #rule1_B = Rule.fromGMLString("""+str(rule_name)+""", invert=True)
 #""")

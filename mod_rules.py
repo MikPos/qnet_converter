@@ -1,3 +1,5 @@
+import mod
+
 ch3oo_vitc_PATH_2_3 = """rule [
 	ruleID " ch3oo_vitc_PATH_2_3"
 	left [
@@ -62,7 +64,7 @@ ch3oo_vitc_PATH_2_3 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_2_3)
+rule_ch3oo_vitc_PATH_2_3_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_2_3)
 ch3oo_vitc_PATH_3_5 = """rule [
 	ruleID " ch3oo_vitc_PATH_3_5"
 	left [
@@ -127,7 +129,7 @@ ch3oo_vitc_PATH_3_5 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_3_5)
+rule_ch3oo_vitc_PATH_3_5_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_3_5)
 ch3oo_vitc_PATH_4_7 = """rule [
 	ruleID " ch3oo_vitc_PATH_4_7"
 	left [
@@ -192,7 +194,7 @@ ch3oo_vitc_PATH_4_7 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_4_7)
+rule_ch3oo_vitc_PATH_4_7_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_4_7)
 ch3oo_vitc_PATH_5_8 = """rule [
 	ruleID " ch3oo_vitc_PATH_5_8"
 	left [
@@ -257,7 +259,7 @@ ch3oo_vitc_PATH_5_8 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_5_8)
+rule_ch3oo_vitc_PATH_5_8_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_5_8)
 ch3oo_vitc_PATH_8_11 = """rule [
 	ruleID " ch3oo_vitc_PATH_8_11"
 	left [
@@ -322,7 +324,7 @@ ch3oo_vitc_PATH_8_11 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_8_11)
+rule_ch3oo_vitc_PATH_8_11_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_8_11)
 ch3oo_vitc_PATH_10_13 = """rule [
 	ruleID " ch3oo_vitc_PATH_10_13"
 	left [
@@ -387,7 +389,7 @@ ch3oo_vitc_PATH_10_13 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_10_13)
+rule_ch3oo_vitc_PATH_10_13_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_10_13)
 ch3oo_vitc_PATH_11_14 = """rule [
 	ruleID " ch3oo_vitc_PATH_11_14"
 	left [
@@ -452,7 +454,7 @@ ch3oo_vitc_PATH_11_14 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_vitc_PATH_11_14)
+rule_ch3oo_vitc_PATH_11_14_F = mod.Rule.fromGMLString(ch3oo_vitc_PATH_11_14)
 ch3oo_mol_5_PATH_1_2 = """rule [
 	ruleID " ch3oo_mol_5_PATH_1_2"
 	left [
@@ -518,7 +520,7 @@ ch3oo_mol_5_PATH_1_2 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_mol_5_PATH_1_2)
+rule_ch3oo_mol_5_PATH_1_2_F = mod.Rule.fromGMLString(ch3oo_mol_5_PATH_1_2)
 ch3oo_mol_6_PATH_0_0 = """rule [
 	ruleID " ch3oo_mol_6_PATH_0_0"
 	left [
@@ -583,7 +585,7 @@ ch3oo_mol_6_PATH_0_0 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_mol_6_PATH_0_0)
+rule_ch3oo_mol_6_PATH_0_0_F = mod.Rule.fromGMLString(ch3oo_mol_6_PATH_0_0)
 ch3oo_mol_6_PATH_1_2 = """rule [
 	ruleID " ch3oo_mol_6_PATH_1_2"
 	left [
@@ -649,4 +651,16 @@ ch3oo_mol_6_PATH_1_2 = """rule [
 
 	]
 ]"""
-rule1_F = Rule.fromGMLString(ch3oo_mol_6_PATH_1_2)
+rule_ch3oo_mol_6_PATH_1_2_F = mod.Rule.fromGMLString(ch3oo_mol_6_PATH_1_2)
+
+
+rule_ch3oo_vitc_PATH_10_13_F.print()
+rule_ch3oo_vitc_PATH_11_14_F.print()
+rule_ch3oo_vitc_PATH_2_3_F.print()
+rule_ch3oo_vitc_PATH_3_5_F.print()
+rule_ch3oo_vitc_PATH_4_7_F.print()
+rule_ch3oo_vitc_PATH_5_8_F.print()
+rule_ch3oo_vitc_PATH_8_11_F.print()
+rule_ch3oo_mol_5_PATH_1_2_F.print()
+rule_ch3oo_mol_6_PATH_0_0_F.print()
+rule_ch3oo_mol_6_PATH_1_2_F.print()
