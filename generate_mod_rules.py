@@ -182,7 +182,7 @@ if  __name__=="__main__":
         with open("ts/"+key.replace("/PATH","_PATH")+"/charge.txt", "r") as inp:
             tot_charge = int(inp.readlines()[0])
             print(tot_charge)
-        if not os.path.isfile(key.replace("/PATH","_PATH")+"/unpaired.txt"):
+        if not os.path.isfile("ts/"+key.replace("/PATH","_PATH")+"/unpaired.txt"):
             print(key)
             print("No "+key.replace("/PATH","_PATH")+"/unpaired.txt")
             tot_unpaired = 0
@@ -294,35 +294,50 @@ if  __name__=="__main__":
         right_string += for_right_string
         left_string += for_left_string
 
-        context_string = ""
-        if full_context:
-            for node in all_nodes:
-                if node in ed_radicals and node in prod_radicals:
-                    context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+".\" ]\n"
-                else:
-                    context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n"
-            for item in ed_conn_final:
-                context_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
+        # Create context for the full context rules
+        full_context_string = ""
+        for node in all_nodes:
+            if node in ed_radicals and node in prod_radicals:
+                full_context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+".\" ]\n"
+            else:
+                full_context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n"
+        for item in ed_conn_final:
+            full_context_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
 
-        else:
-            for node in nodes:
-                context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n" 
+        # Create context for the no context rules (nodes that take part in reaction)
+        no_context_string = ""
+        for node in nodes:
+            no_context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n" 
 
         rule_name = key.replace("/PATH","_PATH").replace("-", "_")
 
-        if full_context:
-            mod_rule_file = f"full_context_rules/qnet_rule_{rule_name}.gml"
-        else:
-            mod_rule_file = f"no_context_rules/qnet_rule_{rule_name}.gml"
+        file_full_context = f"full_context_rules/qnet_rule_{rule_name}.gml"
+        file_no_context = f"no_context_rules/qnet_rule_{rule_name}.gml"
 
-        with open(mod_rule_file, "a") as out:
+        with open(file_full_context, "a") as out:
             out.write(str(rule_name)+""" = \"\"\"rule [
 \truleID \" """+str(rule_name)+"""\"
 \tleft [\n"""
 +left_string+"""
 \t]
 \tcontext [\n"""
-+context_string+"""
++full_context_string+"""
+\t]
+\tright [\n"""
++right_string+"""
+\t]
+]\"\"\"
+rule_"""+str(rule_name)+"""_F = mod.Rule.fromGMLString("""+str(rule_name)+""")
+""")
+
+        with open(file_no_context, "a") as out:
+            out.write(str(rule_name)+""" = \"\"\"rule [
+\truleID \" """+str(rule_name)+"""\"
+\tleft [\n"""
++left_string+"""
+\t]
+\tcontext [\n"""
++no_context_string+"""
 \t]
 \tright [\n"""
 +right_string+"""
