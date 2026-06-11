@@ -159,6 +159,7 @@ if  __name__=="__main__":
 
     with open("relations.json", "r") as json_file:
         relations = json.load(json_file)
+
     with open("molecules.json", "r") as json_file:
         mol_json = json.load(json_file)
 
@@ -179,14 +180,9 @@ if  __name__=="__main__":
         with open("ts/"+key.replace("/PATH","_PATH")+"/charge.txt", "r") as inp:
             tot_charge = int(inp.readlines()[0])
             print(tot_charge)
-        if not os.path.isfile("ts/"+key.replace("/PATH","_PATH")+"/unpaired.txt"):
-            print(key)
-            print("No "+key.replace("/PATH","_PATH")+"/unpaired.txt")
-            tot_unpaired = 0
-        else:
-            with open("ts/"+key.replace("/PATH","_PATH")+"/unpaired.txt", "r") as inp:
-                tot_unpaired = int(inp.readlines()[0].strip("u"))
-        print(tot_unpaired)
+        with open("ts/"+key.replace("/PATH","_PATH")+"/unpaired.txt", "r") as inp:
+            tot_unpaired = int(inp.readlines()[0].strip("u"))
+            print(tot_unpaired)
         educts = relations[key]["educts"]
         #for ed in educts:
         #    ed_smi = convert_xyz("molecules/"+ed+"/"+ed+".xyz", charge=mol_json[ed]["charge"], unpaired=mol_json[ed]["charge"])
@@ -215,14 +211,10 @@ if  __name__=="__main__":
         ed_conn = read_SDF_woBO(key+"/educt_new.sdf")
         prod_conn = read_SDF_woBO(key+"/product_new.sdf")
 
-        ed_conn_BO, ed_radicals, ed_charge = read_SDF_withBO(key+"/educt_new.sdf") 
-        prod_conn_BO, prod_radicals, prod_charge = read_SDF_withBO(key+"/product_new.sdf")
+        ed_conn_BO, ed_radicals, ed_charges = read_SDF_withBO(key+"/educt_new.sdf") 
+        prod_conn_BO, prod_radicals, prod_charges = read_SDF_withBO(key+"/product_new.sdf")
 
         print("ed_radicals, prod_radicals:", ed_radicals, prod_radicals)
-        #breaks = compare_connectivity(prod_conn, ed_conn)
-        #adds = compare_connectivity(ed_conn, prod_conn)
-        #print("breaks", breaks)
-        #print("adds", adds)
 
         bo_changes1 = []
         bo_changes2 = []
@@ -230,30 +222,20 @@ if  __name__=="__main__":
         atom_labels = read_SDF_atoms(key+"/educt_new.sdf")
 
         educt_bonds = compare_connectivity(prod_conn_BO, ed_conn_BO)
-        #for item in bo_changes:
-        #    if ".".join(item.split(".")[:-1]) in breaks + adds:
-        #        continue
-        #    else:
-        #        bo_changes1.append(item)
-
         product_bonds = compare_connectivity(ed_conn_BO, prod_conn_BO)
-        #for item in bo_changes:
-        #    if ".".join(item.split(".")[:-1]) in breaks + adds:
-        #        continue
-        #    else:
-        #        bo_changes2.append(item)
-
-        nodes = []
-        for items in educt_bonds+product_bonds:
-            for it in items.split(".")[:2]:
-                if it not in nodes:
-                    nodes.append(it)
 
         all_nodes = []
-        for item in ed_conn_BO:
-            for it in item[:2]:
-                if str(it) not in all_nodes:
-                    all_nodes.append(str(it))
+
+        if full_context:
+            for item in ed_conn_BO:
+                for it in item[:2]:
+                    if str(it) not in all_nodes:
+                        all_nodes.append(str(it))
+        else:
+            for items in educt_bonds+product_bonds:
+                for it in items.split(".")[:2]:
+                    if it not in all_nodes:
+                        all_nodes.append(it)
 
         ed_conn = compare_connectivity([],ed_conn_BO)
         ed_conn_final = []
@@ -263,7 +245,9 @@ if  __name__=="__main__":
             else:
                 ed_conn_final.append(item)
 
-        #charge treatment missing!!!
+        prod_charge_ids = []
+        for prod_charge in prod_charges:
+            prod_charge_ids.append(prod_charge[0])
 
         left_string = ""
         for_right_string = ""
@@ -272,22 +256,60 @@ if  __name__=="__main__":
         if ed_radicals != []:
             for_right_string =""
             for it in ed_radicals:
-                if prod_radicals == [] or it not in prod_radicals:
+                if (prod_radicals == [] or it not in prod_radicals) and it not in prod_charge_ids:
                     left_string += "\t\t\tnode [ id "+str(it)+" label \""+str(atom_labels[it])+".\" ]\n"
                     for_right_string += "\t\t\tnode [ id "+str(it)+" label \""+str(atom_labels[it])+"\" ]\n"
-                    all_nodes.remove(it)
+                    if it in all_nodes:
+                        all_nodes.remove(it)
+        if ed_charges != []:
+            for_right_string =""
+            for it in ed_charges:
+                if (prod_charges == [] or it not in prod_charges) and it[0] not in prod_radicals:
+                    if it[1] == "1":
+                        sign = "+"
+                    elif it[1] == "2":
+                        sign = "+2"
+                    elif it[1] == "-1":
+                        sign = "-"
+                    elif it[1] == "-2":
+                        sign = "-2"
+                    left_string += "\t\t\tnode [ id "+str(it[0])+" label \""+str(atom_labels[it[0]])+sign+"\" ]\n"
+                    for_right_string += "\t\t\tnode [ id "+str(it[0])+" label \""+str(atom_labels[it[0]])+"\" ]\n"
+                    if it[0] in all_nodes:
+                        all_nodes.remove(it[0])
 
         right_string = ""
         for_left_string = ""
+
+        ed_charge_ids = []
+        for ed_charge in ed_charges:
+            ed_charge_ids.append(ed_charge[0])
+
         for item in product_bonds:
             right_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bo(item.split(".")[2]))+"\" ]\n"
         if prod_radicals != []:
             for it in prod_radicals:
-                if ed_radicals == [] or it not in ed_radicals:
+                if (ed_radicals == [] or it not in ed_radicals) and it not in ed_charge_ids:
                     right_string += "\t\t\tnode [ id "+str(it)+" label \""+str(atom_labels[it])+".\" ]\n"
                     for_left_string += "\t\t\tnode [ id "+str(it)+" label \""+str(atom_labels[it])+"\" ]\n"
-                    all_nodes.remove(it)
-  
+                    if it in all_nodes:
+                        all_nodes.remove(it)
+        if prod_charges != []:
+          for it in prod_charges:
+              if (ed_charges == [] or it not in ed_charges):# and it[0] not in ed_radicals:
+                  if it[1] == "1":
+                      sign = "+"
+                  elif it[1] == "2":
+                      sign = "+2"
+                  elif it[1] == "-1":
+                      sign = "-"
+                  elif it[1] == "-2":
+                      sign = "-2"
+                  right_string += "\t\t\tnode [ id "+str(it[0])+" label \""+str(atom_labels[it[0]])+sign+"\" ]\n"
+                  for_left_string += "\t\t\tnode [ id "+str(it[0])+" label \""+str(atom_labels[it[0]])+"\" ]\n"
+                  if it[0] in all_nodes:
+                    all_nodes.remove(it[0])
+
         right_string += for_right_string
         left_string += for_left_string
 
@@ -300,10 +322,12 @@ if  __name__=="__main__":
                     context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n"
             for item in ed_conn_final:
                 context_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bo(item.split(".")[2]))+"\" ]\n"
-
         else:
-            for node in nodes:
-                context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n" 
+            for node in all_nodes:
+                if node in ed_radicals and node in prod_radicals:
+                    context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+".\" ]\n"
+                else:
+                    context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n"
 
         rule_name = key.replace("/PATH","_PATH").replace("-", "_")
 
