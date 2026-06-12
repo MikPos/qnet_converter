@@ -8,6 +8,6 @@ graph [
 		edge [ source 4 target 1 label "-" ]
 		node [ id 5 label "H" ]
 		edge [ source 5 target 1 label "-" ]
-		node [ id 6 label "O." ]
+		node [ id 6 label "O" ]
 		edge [ source 6 target 2 label "-" ]
 ]
