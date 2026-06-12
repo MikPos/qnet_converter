@@ -158,8 +158,6 @@ if  __name__=="__main__":
         for file in glob.glob("no_context_rules/qnet_rule*.gml"):
             os.remove(file)
 
-    
-
     with open("relations.json", "r") as json_file:
         relations = json.load(json_file)
     with open("molecules.json", "r") as json_file:
@@ -169,6 +167,60 @@ if  __name__=="__main__":
         keys = [sys.argv[-2]]
     else:
         keys = relations.keys()
+    
+    mols = mol_json.keys()
+
+    for mol in mols:
+        print(mol)
+        mol_xyz =  mol + "/" + mol + ".xyz"
+
+        with open("molecules/"+mol+"/charge.txt", "r") as inp:
+            tot_charge = int(inp.readlines()[0])
+            print(tot_charge)
+        with open("molecules/"+mol+"/unpaired.txt", "r") as inp:
+            tot_unpaired = int(inp.readlines()[0].strip("u"))
+            print(tot_unpaired)
+
+        convert_xyz(mol_xyz, charge=tot_charge, unpaired=tot_unpaired)
+
+        mol_conn = read_SDF_without_bond_order(mol+"/"+mol+"_new.sdf")
+
+        mol_conn_BO, mol_radicals, mol_charges = read_SDF_with_bond_order(mol+"/"+mol+"_new.sdf")
+        mol_charge_atoms = []
+        for atom in mol_charges:
+            mol_charge_atoms.append(atom[0])
+
+        atom_labels = read_SDF_atoms(mol+"/"+mol+"_new.sdf")
+
+        mol_gml = "graph [\n"
+
+        mol_nodes = []
+        for item in mol_conn_BO:
+            mol_gml += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
+            for it in item.split(".")[:2]:
+                if it not in mol_nodes:
+                    if it in mol_radicals:
+                        mol_gml += "\t\t\tnode [ id "+str(it)+" label \""+str(atom_labels[it])+".\" ]\n"
+                    if it in mol_charge_atoms:
+                        if mol_charges[it][1] == "1":
+                            sign = "+"
+                        elif mol_charges[it][1] == "2":
+                            sign = "+2"
+                        elif mol_charges[it][1] == "-1":
+                            sign = "-"
+                        elif mol_charges[it][1] == "-2":
+                            sign = "-2"
+                        mol_gml += "\t\t\tnode [ id "+str(it[0])+" label \""+str(atom_labels[it[0]])+sign+"\" ]\n"
+                    mol_nodes.append(it)
+        mol_gml += "]"
+        
+        mod_file_name = f"mod_molecules/{mol}.gml"
+
+        with open(mod_file_name, "w") as out:
+            out.write(mol_gml)
+
+
+
 
     for key in keys:
         print(key)
@@ -226,6 +278,9 @@ if  __name__=="__main__":
         educt_bonds = compare_connectivity(prod_conn_BO, ed_conn_BO)
         product_bonds = compare_connectivity(ed_conn_BO, prod_conn_BO)
 
+        # educt_string = ""
+        # product_string = ""
+
         all_nodes = []
         for item in ed_conn_BO:
             for it in item[:2]:
@@ -237,8 +292,6 @@ if  __name__=="__main__":
             for it in items.split(".")[:2]:
                 if it not in nodes:
                     nodes.append(it)
-
-        
 
         ed_conn = compare_connectivity([],ed_conn_BO)
         ed_conn_final = []
@@ -256,6 +309,7 @@ if  __name__=="__main__":
         for_right_string = ""
         for item in educt_bonds:
             left_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
+            # educt_string += "\t\t\t edge [ source "+str(item.split(".")[0])+" target "+str(item.split(".")[1])+" label \""+str(convert_bond_order(item.split(".")[2]))+"\" ]\n"
         if ed_radicals != []:
             for_right_string =""
             for it in ed_radicals:
@@ -332,7 +386,6 @@ if  __name__=="__main__":
             no_context_string += "\t\t\tnode [ id "+str(node)+" label \""+str(atom_labels[node])+"\" ]\n" 
 
         rule_name = key.replace("/PATH","_PATH").replace("-", "_")
-
         file_full_context = f"full_context_rules/qnet_rule_{rule_name}.gml"
         file_no_context = f"no_context_rules/qnet_rule_{rule_name}.gml"
 
